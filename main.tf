@@ -1,10 +1,8 @@
 provider "aws" {
-    region = "us-east-1"
-  
-} 
-variable "bname" {
-  type = string 
+  region = "us-east-1"
 }
+
+
 resource "aws_s3_bucket" "test" {
-  bucket = var.bname
+  bucket = "qtdemofirst"
 }
