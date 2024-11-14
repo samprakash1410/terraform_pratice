@@ -3,6 +3,6 @@ provider "aws" {
 }
 
 
-resource "aws_s3_bucket" "test" {
-  bucket = "qtdemofirst"
+resource "aws_vpc" "test" {
+  cidr_block = "10.10.0.0/16"
 }
