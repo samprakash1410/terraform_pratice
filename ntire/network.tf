@@ -11,6 +11,6 @@ resource "aws_subnet" "subnets" {
   vpc_id     = aws_vpc.primary_network.id
   cidr_block = "10.100.${count.index}.0/24"
   tags = {
-    Name=var.subnet_names[count.index]
+    Name = var.subnet_names[count.index]
   }
 }
