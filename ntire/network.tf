@@ -13,7 +13,8 @@ resource "aws_subnet" "web" {
   vpc_id     = aws_vpc.primary_network.id
   tags = {
     Name = "web"
-    }
+  }
+  depends_on = [ aws_vpc.primary_network ]
 }
 
 resource "aws_subnet" "business" {
@@ -21,7 +22,8 @@ resource "aws_subnet" "business" {
   vpc_id     = aws_vpc.primary_network.id
   tags = {
     Name = "business"
-    }
+  }
+  depends_on = [ aws_vpc.primary_network ]
 }
 
 resource "aws_subnet" "data" {
@@ -29,5 +31,6 @@ resource "aws_subnet" "data" {
   vpc_id     = aws_vpc.primary_network.id
   tags = {
     Name = "data"
-    }
+  }
+  depends_on = [ aws_vpc.primary_network ]
 }
