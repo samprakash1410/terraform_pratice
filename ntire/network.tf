@@ -7,7 +7,7 @@ resource "aws_vpc" "primary_network" {
 }
 
 resource "aws_subnet" "subnets" {
-count = var.subnetcount
-vpc_id = aws_vpc.primary_network.id
-cidr_block = var.subnet_cidr[count.index]
+  count      = length(var.subnet_cidr)
+  vpc_id     = aws_vpc.primary_network.id
+  cidr_block = var.subnet_cidr[count.index]
 }
