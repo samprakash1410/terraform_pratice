@@ -8,11 +8,11 @@ resource "aws_vpc" "primary_network" {
 
 
 
-resource "aws_subnet" "dummy-1 web" {
+resource "aws_subnet" "web_primary-1" {
   cidr_block = "10.100.0.0/24"
   vpc_id     = aws_vpc.primary_network.id
   tags = {
-    Name = "dummy-1 web"
+    Name = "web_primary-1"
 
   }
 }
