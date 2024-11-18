@@ -64,3 +64,21 @@ module "business_security_group" {
     ]
   }
 }
+
+module "data_security_group" {
+  source = "./modules/my_security_group"
+  security_group_info = {
+    name        = "data"
+    description = "this is data security group"
+    vpc_id      = aws_vpc.primary_network.id
+    rules = [{
+      from_port   = "0"
+      to_port     = "65535"
+      type        = "ingress"
+      protocol    = "tcp"
+      cidr_blocks = [var.vpc_cidr]
+      }
+
+    ]
+  }
+}
