@@ -23,25 +23,25 @@ module "web_security_group" {
     vpc_id      = aws_vpc.primary_network.id
     rules = [
       {
-        from_port = 22
-        to_port   = 22
-        type      = "ingress"
-        protocol  = "tcp"
+        from_port   = "22"
+        to_port     = "22"
+        type        = "ingress"
+        protocol    = "tcp"
         cidr_blocks = ["0.0.0.0/0"]
-      },{
-        from_port = 80
-        to_port   = 80
-        type      = "ingress"
-        protocol  = "tcp"
+        }, {
+        from_port   = "80"
+        to_port     = "80"
+        type        = "ingress"
+        protocol    = "tcp"
         cidr_blocks = ["0.0.0.0/0"]
       },
       {
-        from_port = 443
-        to_port   = 443
-        protocol  = "tcp"
+        from_port   = "443"
+        to_port     = "443"
+        protocol    = "tcp"
         cidr_blocks = ["0.0.0.0/0"]
       }
     ]
   }
-  depends_on = [ aws_vpc.primary_network,aws_subnet.subnets ]
+  depends_on = [aws_vpc.primary_network, aws_subnet.subnets]
 }
