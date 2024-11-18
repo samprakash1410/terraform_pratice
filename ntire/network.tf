@@ -16,7 +16,7 @@ resource "aws_subnet" "subnets" {
 }
 
 module "web_security_group" {
-  source = "./path/to/my_security_group"
+  source = "./modules/my_security_group"
   security_group_info = {
     name        = "web"
     description = "this is web security group"
@@ -60,7 +60,7 @@ module "business_security_group" {
       protocol    = "tcp"
       cidr_blocks = [var.vpc_cidr]
       }
-      
+
     ]
   }
 }
