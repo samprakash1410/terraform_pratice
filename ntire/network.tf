@@ -16,7 +16,7 @@ resource "aws_subnet" "subnets" {
 }
 
 module "web_security_group" {
-  source = "./modules/my_security_group"
+  source = "./modules/web_security_group"
   security_group_info = {
     name        = "web"
     description = "this is web security group"
@@ -48,7 +48,7 @@ module "web_security_group" {
 }
 
 module "business_security_group" {
-  source = "./modules/my_security_group"
+  source = "./modules/business_security_group"
   security_group_info = {
     name        = "business"
     description = "this is business security group"
@@ -66,7 +66,7 @@ module "business_security_group" {
 }
 
 module "data_security_group" {
-  source = "./modules/my_security_group"
+  source = "./modules/data_security_group"
   security_group_info = {
     name        = "data"
     description = "this is data security group"
