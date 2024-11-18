@@ -44,5 +44,5 @@ module "web_security_group" {
       }
     ]
   }
-  depends_on = [aws_vpc.primary_network, aws_subnet.subnets]
+  
 }
