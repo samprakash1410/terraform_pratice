@@ -16,7 +16,7 @@ resource "aws_subnet" "subnets" {
 }
 
 module "web_security_group" {
-  source = "./path/to/web_security_group"
+  source = "./path/to/my_security_group"
   security_group_info = {
     name        = "web"
     description = "this is web security group"
@@ -44,5 +44,5 @@ module "web_security_group" {
       }
     ]
   }
-  
+  depends_on = [aws_vpc.primary_network, aws_subnet.subnets]
 }
