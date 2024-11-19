@@ -1,6 +1,8 @@
-module "ec2_instance"{
-  source                 = "terraform-aws-modules/ec2_instance/aws"
-  name                   = "single-instance"
+module "ec2_instance" {
+  source  = "terraform-aws-modules/ec2-instance/aws"
+
+  name = "single-instance"
+
   instance_type          = "t2.micro"
   key_name               = "Elcy_rsa"
   monitoring             = true
