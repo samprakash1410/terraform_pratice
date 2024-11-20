@@ -4,10 +4,10 @@ module "ec2_instance" {
   name = "single-instance"
 
   instance_type          = "t2.micro"
-  key_name               = "Elcy_pem"
+  key_name               = "scoobydo"
   monitoring             = true
-  vpc_security_group_ids = ["sg-0d18d3771dc781bc4"]
-  subnet_id              = "subnet-0c5c6262e0aa26910"
+  vpc_security_group_ids = ["sg-039f4c24c1fda9695"]
+  subnet_id              = "subnet-062d1488310b0856e"
 
   tags = {
     Terraform   = "true"
