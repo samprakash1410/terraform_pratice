@@ -4,7 +4,7 @@ module "ec2_instance" {
   name = "single-instance"
 
   instance_type          = "t2.micro"
-  key_name               = "Elcy_rsa"
+  key_name               = "Elcy_pem"
   monitoring             = true
   vpc_security_group_ids = ["sg-0d18d3771dc781bc4"]
   subnet_id              = "subnet-0c5c6262e0aa26910"
